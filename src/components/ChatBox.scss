@@ -1,0 +1,25 @@
+// src/components/ChatBox.scss
+.chat-box {
+  border: 1px solid #ccc;
+  padding: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+
+  .messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+
+  input {
+    width: calc(100% - 60px);
+    padding: 8px;
+    margin-right: 8px;
+  }
+
+  button {
+    padding: 8px 16px;
+  }
+}
