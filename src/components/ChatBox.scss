@@ -26,11 +26,13 @@ body {
   @media (max-width: $breakpoint-tablet) {
     padding: $spacing-small;
     min-height: 90vh;
+    border-radius: 4px;
   }
 
   @media (max-width: $breakpoint-mobile) {
     padding: $spacing-small;
     min-height: 90vh;
+    border-radius: 4px;
   }
 }
 
@@ -84,7 +86,7 @@ body {
 
 .message.assistant {
   color: $brand-white;
-  background-color: $brand-gray; /* Assistant message green */
+  background-color: $brand-gray;
   align-self: flex-start;
   text-align: left;
   width: 75%;
@@ -120,10 +122,12 @@ body {
 
   @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
+    border-radius: 4px;
   }
 
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
+    border-radius: 4px;
   }
 }
 
@@ -137,10 +141,12 @@ body {
 
   @media (max-width: $breakpoint-tablet) {
     margin-bottom: $spacing-small;
+    border-radius: 4px;
   }
 
   @media (max-width: $breakpoint-mobile) {
     margin-bottom: $spacing-small;
+    border-radius: 4px;
   }
 }
 
@@ -155,10 +161,12 @@ body {
   transition: background-color 0.3s;
 
   @media (max-width: $breakpoint-tablet) {
+    border-radius: 4px;
     width: 100%;
   }
 
   @media (max-width: $breakpoint-mobile) {
+    border-radius: 4px;
     width: 100%;
   }
 }
@@ -205,9 +213,11 @@ body {
 
   @media (max-width: $breakpoint-tablet) {
     font-size: 1.5em;
+    border-radius: 4px;
   }
 
   @media (max-width: $breakpoint-mobile) {
     font-size: 1em;
+    border-radius: 4px;
   }
 }
