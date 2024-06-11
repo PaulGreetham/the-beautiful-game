@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useTypingEffect = (text: string, speed: number = 50) => {
+export const useTypingEffect = (text: string, speed: number = 10) => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {

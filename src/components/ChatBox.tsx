@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ChatBox.scss';
 import { useTypingEffect } from '../hooks/useTypingEffect';
@@ -8,7 +8,7 @@ const ChatBox: React.FC = () => {
   const [messages, setMessages] = useState<{ role: string, content: string }[]>([
     {
       role: 'system',
-      content: "You are an assistant who writes essays about football players in the style of Ernest Hemingway. The essay should be 2,000 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.",
+      content: "You are an assistant who writes essays about football players in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.",
     },
     {
       role: 'assistant',
@@ -17,19 +17,21 @@ const ChatBox: React.FC = () => {
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const [currentMessage, setCurrentMessage] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
   const handleSendMessage = async (messageContent: string) => {
     setMessages((prevMessages) => [...prevMessages, { role: 'user', content: messageContent }]);
     setIsTyping(true);
+    setIsLoading(true);
 
     try {
       const payload = {
         model: 'gpt-3.5-turbo',
         messages: [
           ...messages,
-          { role: 'user', content: `Write a 2,000 word essay about the football player ${messageContent}.` }
+          { role: 'user', content: `Write a 1,000 word essay about the football player ${messageContent}, in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.` }
         ],
         temperature: 0.7,
       };
@@ -47,8 +49,7 @@ const ChatBox: React.FC = () => {
 
       if (response.data.choices && response.data.choices.length > 0) {
         const botMessage = response.data.choices[0].message.content;
-        setMessages((prevMessages) => [...prevMessages, { role: 'assistant', content: botMessage }]);
-        setCurrentMessage(botMessage); // Update current message for typing effect
+        setCurrentMessage(botMessage);
       } else {
         setMessages((prevMessages) => [...prevMessages, { role: 'system', content: 'Error: No choices found in the response.' }]);
       }
@@ -65,31 +66,31 @@ const ChatBox: React.FC = () => {
     }
 
     setIsTyping(false);
+    setIsLoading(false);
   };
 
-  // Use typing effect for the current message
-  const typedText = useTypingEffect(currentMessage);
+  // Use typing effect for the current message, with twice the speed
+  const typedText = useTypingEffect(currentMessage); // Adjust the speed parameter as needed
+
+  useEffect(() => {
+    if (currentMessage) {
+      setMessages((prevMessages) => [...prevMessages, { role: 'assistant', content: currentMessage }]);
+    }
+  }, [currentMessage]);
 
   return (
     <div className="chat-container">
+      <header className="App-header">
+        <h1>The Beautiful Game</h1>
+      </header>
       <div className="chat-messages">
-        {messages.map((message, index) => {
-          if (message.role === 'assistant') {
-            return (
-              <div key={index} className="message">
-                <h3>{message.role}</h3>
-                <p>{typedText}</p> {/* Display the typed text */}
-              </div>
-            );
-          }
-          return (
-            <div key={index} className="message">
-              <h3>{message.role}</h3>
-              <p>{message.content}</p>
-            </div>
-          );
-        })}
-        {isTyping && <p className="bot-typing">Bot is typing...</p>}
+        {messages.map((message, index) => (
+          <div key={index} className="message">
+            <h3>{message.role}</h3>
+            <p>{index === messages.length - 1 && message.role === 'assistant' ? typedText : message.content}</p>
+          </div>
+        ))}
+        {isLoading && <div className="spinner"></div>}
       </div>
       <form
         className="chat-input"
