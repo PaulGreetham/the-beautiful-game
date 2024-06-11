@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './ChatBox.scss';
 import { useTypingEffect } from '../hooks/useTypingEffect';
@@ -18,6 +18,7 @@ const ChatBox: React.FC = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [currentMessage, setCurrentMessage] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
+  const latestMessageRef = useRef<HTMLDivElement>(null);
 
   const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
@@ -31,7 +32,7 @@ const ChatBox: React.FC = () => {
         model: 'gpt-3.5-turbo',
         messages: [
           ...messages,
-          { role: 'user', content: `Write a 1,000 word essay about the football player ${messageContent}, in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.` }
+          { role: 'user', content: `Write a 500 word essay about the football player ${messageContent}, in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.` }
         ],
         temperature: 0.7,
       };
@@ -78,6 +79,18 @@ const ChatBox: React.FC = () => {
     }
   }, [currentMessage]);
 
+  useEffect(() => {
+    if (latestMessageRef.current) {
+      latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
+
+  const renderMessageContent = (content: string) => {
+    return content.split('\n').map((paragraph, index) => (
+      <p key={index} className="paragraph">{paragraph}</p>
+    ));
+  };
+
   return (
     <div className="chat-container">
       <header className="App-header">
@@ -85,9 +98,9 @@ const ChatBox: React.FC = () => {
       </header>
       <div className="chat-messages">
         {messages.map((message, index) => (
-          <div key={index} className="message">
+          <div key={index} className="message" ref={index === messages.length - 1 ? latestMessageRef : null}>
             <h3>{message.role}</h3>
-            <p>{index === messages.length - 1 && message.role === 'assistant' ? typedText : message.content}</p>
+            <div>{index === messages.length - 1 && message.role === 'assistant' ? renderMessageContent(typedText) : renderMessageContent(message.content)}</div>
           </div>
         ))}
         {isLoading && <div className="spinner"></div>}
