@@ -32,7 +32,7 @@ const ChatBox: React.FC = () => {
         model: 'gpt-3.5-turbo',
         messages: [
           ...messages,
-          { role: 'user', content: `Write a 500 word essay about the football player ${messageContent}, in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.` }
+          { role: 'user', content: `Write a 500 word essay about the football player ${messageContent}.` }
         ],
         temperature: 0.7,
       };
@@ -71,7 +71,7 @@ const ChatBox: React.FC = () => {
   };
 
   // Use typing effect for the current message, with twice the speed
-  const typedText = useTypingEffect(currentMessage); // Adjust the speed parameter as needed
+  const typedText = useTypingEffect(currentMessage, 25); // Adjust the speed parameter as needed
 
   useEffect(() => {
     if (currentMessage) {
@@ -98,7 +98,11 @@ const ChatBox: React.FC = () => {
       </header>
       <div className="chat-messages">
         {messages.map((message, index) => (
-          <div key={index} className="message" ref={index === messages.length - 1 ? latestMessageRef : null}>
+          <div
+            key={index}
+            className={`message ${message.role}`}
+            ref={index === messages.length - 1 ? latestMessageRef : null}
+          >
             <h3>{message.role}</h3>
             <div>{index === messages.length - 1 && message.role === 'assistant' ? renderMessageContent(typedText) : renderMessageContent(message.content)}</div>
           </div>
