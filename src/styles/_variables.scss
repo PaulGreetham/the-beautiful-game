@@ -11,10 +11,11 @@ $button-hover-color: #4dff4d;
 $spinner-color: #ffffff;
 
 $brand-white: #F5F7F8;
-$brand-red: #F55C47;
+$brand-red: #F58634;
+$brand-yellow: #FFCC29;
 $brand-gray: #7F8487;
-$brand-light-green: #9FE6A0;
-$brand-dark-green: #4AA96C;
+$brand-light-green: #007965;
+$brand-dark-green: #00AF91;
 
 /* Fonts */
 $font-family: 'Roboto', sans-serif;
@@ -32,3 +33,7 @@ $border-radius-general: 4px;
 
 /* Box Shadow */
 $box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* Breakpoints */
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
