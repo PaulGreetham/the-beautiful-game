@@ -32,7 +32,7 @@ const ChatBox: React.FC = () => {
         model: 'gpt-3.5-turbo',
         messages: [
           ...messages,
-          { role: 'user', content: `Write a 500 word essay about the football player ${messageContent}.` }
+          { role: 'user', content: `Write a 500 word essay about the football player ${messageContent}, in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.` }
         ],
         temperature: 0.7,
       };
