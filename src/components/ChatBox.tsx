@@ -7,10 +7,6 @@ const ChatBox: React.FC = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ role: string, content: string }[]>([
     {
-      role: 'system',
-      content: "You are an assistant who writes essays about football players in the style of Ernest Hemingway. The essay should be 500 words long, focusing on the player's main achievements, the main teams of their career, their positions, statistics, and other informative information.",
-    },
-    {
       role: 'assistant',
       content: 'Which player would you like information on?',
     },
@@ -71,7 +67,7 @@ const ChatBox: React.FC = () => {
   };
 
   // Use typing effect for the current message, with twice the speed
-  const typedText = useTypingEffect(currentMessage, 25); // Adjust the speed parameter as needed
+  const typedText = useTypingEffect(currentMessage); // Adjust the speed parameter as needed
 
   useEffect(() => {
     if (currentMessage) {
@@ -97,6 +93,8 @@ const ChatBox: React.FC = () => {
         <h1>The Beautiful Game</h1>
       </header>
       <div className="chat-messages">
+      <h2>Welcome to The Beautiful Game Chatbot</h2>
+      <p>Ask about any football player, and I will provide you with a detailed essay in the style of Ernest Hemingway.</p>
         {messages.map((message, index) => (
           <div
             key={index}
