@@ -89,7 +89,7 @@ const ChatBox: React.FC = () => {
 
   return (
     <div className="chat-container">
-      <header className="App-header">
+      <header className="app-header">
         <h1>The Beautiful Game</h1>
       </header>
       <div className="chat-messages">
