@@ -1,0 +1,39 @@
+@import '../../styles/_variables';
+
+.chat-input {
+  display: flex;
+  width: 100%;
+  padding-block: $spacing-medium;
+  background-color: rgba(26, 77, 46, 0.9);
+
+  input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    margin-left: 2rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    background-color: $brand-red;
+    color: $brand-white;
+    border-radius: 0 4px 4px 0;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:disabled {
+      background-color: $brand-gray; /* Slightly darker green for disabled button */
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: $brand-gray;
+    }
+  }
+}

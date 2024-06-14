@@ -1,10 +1,10 @@
 import React from 'react';
-import ChatBox from './components/ChatBox';
+import ChatApp from './components/chatApp/ChatApp';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <ChatBox />
+      <ChatApp />
     </div>
   );
 };

@@ -1,0 +1,72 @@
+@import '../../styles/_variables';
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: $border-radius-chat;
+  word-wrap: break-word;
+  color: black;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    color: white;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: black;
+    text-transform: capitalize;
+  }
+
+  &.user {
+    display: flex;
+    align-self: flex-end;
+    text-align: right;
+    color: $brand-white;
+    background-color: $brand-red;
+    width: 60%;
+    padding: $spacing-small-new;
+
+    h3 {
+      color: white;
+    }
+
+    p {
+      display: flex;
+      justify-content: flex-start;
+      color: white;
+    }
+  }
+
+  &.assistant {
+    color: black;
+    background-color: white;
+    align-self: flex-start;
+    text-align: left;
+    width: 75%;
+    padding: $spacing-small-new;
+  }
+
+  p {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: black;
+  }
+}
+
+.paragraph {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.bot-typing {
+  font-style: italic;
+  color: $brand-red;
+}
