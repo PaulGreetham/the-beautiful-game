@@ -23,6 +23,10 @@ const ChatApp: React.FC = () => {
 
   const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
+  useEffect(() => {
+    console.log('Initial Messages:', messages); // Debug initial messages
+  }, [messages]);
+
   const handleSendMessage = async (messageContent: string) => {
     setMessages((prevMessages) => [...prevMessages, { role: 'user', content: messageContent }]);
     setIsTyping(true);
@@ -85,7 +89,7 @@ const ChatApp: React.FC = () => {
   const typedText = useTypingEffect(currentMessage);
 
   useEffect(() => {
-    if (currentMessage) {
+    if (currentMessage.trim()) {
       setMessages((prevMessages) => [
         ...prevMessages,
         { role: 'assistant', content: currentMessage },
