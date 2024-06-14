@@ -14,7 +14,7 @@
     font-family: $header-family;
     font-size: 7rem;
     margin: 0;
-    padding-block: 1rem;
+    padding: $spacing-tiny $spacing-medium;
 
     @media (max-width: $breakpoint-tablet) {
       font-size: 5rem;

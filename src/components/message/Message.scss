@@ -15,9 +15,9 @@
 
   h3 {
     margin: 0;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
-    font-weight: lighter;
+    font-style: italic;
     color: black;
     text-transform: capitalize;
   }
@@ -30,6 +30,7 @@
     background-color: $brand-red;
     width: 60%;
     padding: $spacing-small-new;
+    margin-left: auto;
 
     h3 {
       color: white;
@@ -48,7 +49,7 @@
     align-self: flex-start;
     text-align: left;
     width: 75%;
-    padding: $spacing-small-new;
+    padding: $spacing-tiny;
   }
 
   p {

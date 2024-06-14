@@ -12,11 +12,13 @@
 h2 {
   color: $brand-white;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 p {
-  color: $brand-white;
   text-align: center;
-  margin-bottom: 2rem;
+  color: $brand-white;
+  font-weight: lighter;
+  font-style: italic;
+  margin-block: $spacing-medium-new;
 }

@@ -19,8 +19,8 @@ const MessageList: React.FC<MessageListProps> = ({
 
   return (
     <div className="chat-messages">
-      <h2>Welcome to The Beautiful Game Chatbot</h2>
-      <p>Ask about any football player, and I will provide you with a detailed essay in the style of Ernest Hemingway.</p>
+      <h2>Elevating the beautiful game to new heights through AI</h2>
+      <p>Dive into the rich histories and stories of football's greatest players. Input the name of any player, and receive an eloquent, in-depth essay celebrating their achievements and legacy - all in the style of some of the great literary giants of the 20th Centruy.</p>
       {messages.map((message, index) => (
         <div key={index} ref={index === messages.length - 1 ? latestMessageRef : null}>
           <Message
