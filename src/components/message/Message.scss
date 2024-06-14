@@ -1,7 +1,7 @@
 @import '../../styles/_variables';
 
 .message {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   padding: 10px;
   border-radius: $border-radius-chat;
   word-wrap: break-word;
@@ -28,8 +28,9 @@
     text-align: right;
     color: $brand-white;
     background-color: $brand-red;
-    width: 60%;
+    width: 30%;
     padding: $spacing-small-new;
+    padding-bottom: 0;
     margin-left: auto;
 
     h3 {
@@ -40,6 +41,7 @@
       display: flex;
       justify-content: flex-start;
       color: white;
+      padding-bottom: 1rem;
     }
   }
 
@@ -50,11 +52,22 @@
     text-align: left;
     width: 75%;
     padding: $spacing-tiny;
+
+    // p {
+    //   display: flex;
+    //   justify-content: flex-start;
+    //   align-items: left;
+    //   margin: 0;
+    //   font-size: 14px;
+    //   line-height: 1.5;
+    //   color: black;
+    // }
   }
 
   p {
     display: flex;
     justify-content: flex-start;
+    align-items: left;
     margin: 0;
     font-size: 14px;
     line-height: 1.5;
@@ -62,10 +75,12 @@
   }
 }
 
-.paragraph {
-  display: flex;
-  margin-bottom: 2rem;
-}
+// .paragraph {
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: left;
+//   margin-bottom: 2rem;
+// }
 
 .bot-typing {
   font-style: italic;

@@ -24,8 +24,15 @@ h4 {
 }
 
 p {
-  text-align: center;
   color: $brand-white;
   font-weight: lighter;
   margin-block: $spacing-medium-new;
+}
+
+.paragraph {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  margin-block: $spacing-medium-new;
+  padding-bottom: 0.5rem;
 }
