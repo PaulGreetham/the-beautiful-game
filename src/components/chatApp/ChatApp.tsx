@@ -1,4 +1,3 @@
-// src/components/chatApp/ChatApp.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './ChatApp.scss';
@@ -107,6 +106,7 @@ const ChatApp: React.FC = () => {
 
   return (
     <div className="chat-container">
+      {isLoading && <Spinner />} {/* Conditionally render the Spinner as an overlay */}
       <Header />
       <MessageList
         messages={messages}
@@ -116,7 +116,6 @@ const ChatApp: React.FC = () => {
         typedText={typedText}
       />
       <ChatInput handleSendMessage={handleSendMessage} isTyping={isTyping} />
-      {isLoading && <Spinner />}
     </div>
   );
 };
