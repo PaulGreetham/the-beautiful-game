@@ -5,11 +5,16 @@ export const useTypingEffect = (text: string, speed: number = 10) => {
 
   useEffect(() => {
     let index = 0;
-    setDisplayedText('');
+    if (text.length > 0) {
+      setDisplayedText(text.charAt(0));
+      index = 1;
+    }
+
     const intervalId = setInterval(() => {
-      setDisplayedText((prev) => prev + text.charAt(index));
-      index++;
-      if (index === text.length) {
+      if (index < text.length) {
+        setDisplayedText((prev) => prev + text.charAt(index));
+        index++;
+      } else {
         clearInterval(intervalId);
       }
     }, speed);
