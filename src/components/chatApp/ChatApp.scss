@@ -3,11 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .chat-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   max-width: 800px;
-  margin: 0 auto;
-  padding-inline: $spacing-medium;
+  padding-inline: 2rem;
 }

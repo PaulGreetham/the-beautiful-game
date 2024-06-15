@@ -11,28 +11,80 @@
 
 h2 {
   color: $brand-white;
+  font-size: 1.5rem;
   text-align: center;
   margin: 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: $breakpoint-mobile-small) {
+    font-size: 0.9rem;
+  }
 }
 
 h4 {
   text-align: center;
   color: $brand-white;
+  font-size: 1rem;
   font-weight: lighter;
   font-style: italic;
   margin-block: $spacing-medium-new;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: $breakpoint-mobile-small) {
+    font-size: 0.7rem;
+  }
 }
 
 p {
   color: $brand-white;
+  font-size: 1rem;
   font-weight: lighter;
   margin-block: $spacing-medium-new;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: $breakpoint-mobile-small) {
+    font-size: 0.7rem;
+  }
 }
 
 .paragraph {
   display: flex;
   justify-content: flex-start;
+  font-size: 1rem;
   align-items: left;
   margin-block: $spacing-medium-new;
   padding-bottom: 0.5rem;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: $breakpoint-mobile-small) {
+    font-size: 0.7rem;
+  }
 }
