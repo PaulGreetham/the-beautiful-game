@@ -106,7 +106,7 @@ const ChatApp: React.FC = () => {
 
   return (
     <div className="chat-container">
-      {isLoading && <Spinner />} {/* Conditionally render the Spinner as an overlay */}
+      {isLoading && <Spinner />}
       <Header />
       <MessageList
         messages={messages}
