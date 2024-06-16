@@ -7,6 +7,18 @@
   overflow-y: auto;
   padding: $spacing-medium;
   background-color: rgba(26, 77, 46, 0.9);
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: $breakpoint-mobile-small) {
+    font-size: 0.9rem;
+  }
 }
 
 h2 {

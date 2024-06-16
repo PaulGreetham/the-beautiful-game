@@ -4,7 +4,6 @@ import { MessageProps } from '../../types/types';
 import './Message.scss';
 
 const Message: React.FC<MessageProps> = ({ role, content, renderMessageContent }) => {
-  console.log('Rendering Message:', { role, content }); // Debug props
 
   return (
     <div className={`message ${role}`}>

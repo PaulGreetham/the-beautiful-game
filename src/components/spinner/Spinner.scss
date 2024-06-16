@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6); // Optional: Add a semi-transparent background
+  background-color: rgba(0, 0, 0, 0.5); // Optional: Add a semi-transparent background
   z-index: 1000; // Ensure the overlay is on top of other elements
   transition: 0.3s ease-in-out;
 }

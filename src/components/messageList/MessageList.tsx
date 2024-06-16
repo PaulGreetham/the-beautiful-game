@@ -19,7 +19,7 @@ const MessageList: React.FC<MessageListProps> = ({
 
   return (
     <div className="chat-messages">
-      <h2>Elevating the beautiful game to new heights through AI</h2>
+      <h2>Elevating the beautiful game through AI</h2>
       <h4>Dive into the rich histories and stories of football's greatest players. Input the name of any player, and receive an eloquent, in-depth essay celebrating their achievements and legacy - all in the style of some of the great literary giants of the 20th Century.</h4>
       {messages.map((message, index) => (
         <div key={index} ref={index === messages.length - 1 ? latestMessageRef : null}>
