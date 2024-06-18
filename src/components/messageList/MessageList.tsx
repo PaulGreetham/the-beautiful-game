@@ -1,3 +1,4 @@
+// src/components/messageList/MessageList.tsx
 import React, { useEffect, useRef } from 'react';
 import Message from '../message/Message';
 import { MessageListProps } from '../../types/types';

@@ -4,6 +4,10 @@
 
 .chat-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 800px;
   padding-inline: 2rem;
+  background-color: rgba(26, 77, 46, 0.9);
 }
