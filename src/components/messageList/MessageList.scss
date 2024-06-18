@@ -3,20 +3,11 @@
 .chat-messages {
   display: flex;
   flex-direction: column;
-  max-height: 76vh;
   overflow-y: auto;
   padding: $spacing-medium;
 
-  @media (max-width: $breakpoint-tablet) {
-    font-size: 1.3rem;
-  }
-
   @media (max-width: $breakpoint-mobile) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: $breakpoint-mobile-small) {
-    font-size: 0.9rem;
+    padding: $spacing-small-new;
   }
 }
 
@@ -25,18 +16,6 @@ h2 {
   font-size: 1.5rem;
   text-align: center;
   margin: 0;
-
-  @media (max-width: $breakpoint-tablet) {
-    font-size: 1.3rem;
-  }
-
-  @media (max-width: $breakpoint-mobile) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: $breakpoint-mobile-small) {
-    font-size: 0.9rem;
-  }
 }
 
 h4 {
@@ -46,18 +25,6 @@ h4 {
   font-weight: lighter;
   font-style: italic;
   margin-block: $spacing-medium-new;
-
-  @media (max-width: $breakpoint-tablet) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: $breakpoint-mobile) {
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: $breakpoint-mobile-small) {
-    font-size: 0.7rem;
-  }
 }
 
 p {

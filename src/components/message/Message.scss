@@ -36,13 +36,7 @@
     h3 {
       color: white;
 
-      @media (max-width: $breakpoint-tablet) {
-        font-size: 0.9rem;
-      }
 
-      @media (max-width: $breakpoint-mobile) {
-        font-size: 0.8rem;
-      }
     }
 
     p {
