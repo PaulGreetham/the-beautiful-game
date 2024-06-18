@@ -2,8 +2,7 @@
 
 .chat-input {
   display: flex;
-  width: 100%;
-  padding-block: $spacing-medium;
+  padding: $spacing-medium;
 
   input {
     flex-grow: 1;
