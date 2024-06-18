@@ -1,4 +1,3 @@
-// src/components/spinner/Spinner.scss
 @import '../../styles/_variables';
 
 .spinner-overlay {
@@ -10,8 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); // Optional: Add a semi-transparent background
-  z-index: 1000; // Ensure the overlay is on top of other elements
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
   transition: 0.3s ease-in-out;
 }
 
